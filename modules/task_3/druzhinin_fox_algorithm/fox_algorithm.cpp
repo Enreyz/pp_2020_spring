@@ -19,7 +19,7 @@ void fillMatrix(double* a, const int size) {  // filling the matrix with random 
 
 bool comparisonMatrixes(const double* a, const double* b, const int size) {  // comparison two matrixes
     for (int i = 0; i < size * size; i++) {
-        if (std::fabs(a[i] - b[i]) > std::numeric_limits<double>::epsilon() * max(a[i], b[i]) * 100) {
+        if (std::fabs(a[i] - b[i]) > std::numeric_limits<double>::epsilon() * std::max(a[i], b[i]) * 100) {
             return false;
         }
     }
