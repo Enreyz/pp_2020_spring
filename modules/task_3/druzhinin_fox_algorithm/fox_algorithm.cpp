@@ -48,7 +48,7 @@ void foxAlgorithm_tbb(double* a, double* b, double* res, int size, int count_pro
             for (int j = 0; j < size; j += block_size)
                 for (int k = 0; k < size; k += block_size)
                     atomic_mult(a, b, res, size, block_size, i * block_size, j, k);
-        }, tbb::affinity_partitioner());
+        });
 }
 
 void atomic_mult(double* a, double* b, double* res, int size, int block_size, int ii, int jj, int kk) {
